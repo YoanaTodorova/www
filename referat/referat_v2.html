@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Firebug</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="highlight/styles/default.css">
+        <link rel="stylesheet" href="resources/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row header-row">
+                <div class="page-header offset6">
+                    <h1>Firebug</h1>
+                    <h3>Проект по WWW технологии</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="bs-docs-sidebar">
+                        <ul class="nav nav-list bs-docs-sidenav affix" data-spy="affix" data-offset-top="25" id="sidebar">
+                            <li class="active menu-item"><a href="#whatIsFirebug">1. Какво е Firebug?</a></li>
+                            <li class="menu-item"><a href="#cssAndDOM">2. Редактиране на стилове и DOM</a></li>
+                            <li class="menu-item"><a href="#javaScript">З. Дебъгване на javaScript</a></li>
+                            <li class="menu-item"><a href="#timelinePanel">4. Профилиране на работата с Timeline панел</a></li>
+                            <li class="menu-item"><a href="#workingWithConsole">5. Използване на конзолата</a></li>
+                            <li class="menu-item"><a href="#cookies">6. Управление на бисквитки</a></li>
+                            <li class="menu-item"><a href="#errors">7. Грешки</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <!-- Какво е Firebug -->
+                    <h3 id="whatIsFirebug">Какво е Firebug?</h3>
+                    <div>
+                        Firebug се интегрира с Firefox, поставяйки богатство от developer tools в ръцете на програмиста.
+                        Той може да редактира, дебъгва и наблюдава CSS, HTML и JavaScript "на живо" на която и да е уеб страница.
+
+                        http://getfirebug.com/whatisfirebug
+
+                        Firebug е безплатна и open-sorce уеб приставка(екстеншън) за Mozilla Firefox, която улеснява дебъгването
+                        "на живо", редактирането и наблюдаването на CSS, HTML, DOM, XHR и JavaScript на който и да е уебсайт.
+
+                        Firebug е лицензиран под BSD лиценза и първоначално е бил написан през януари 2006 от Joe Hewitt.
+Firebug is licensed under the BSD license[3] and was initially written in January 2006 by Joe Hewitt, one of the original Firefox creators.[6] The Firebug Working Group oversees the open source development and extension of Firebug. It has two major implementations: an extension for Mozilla Firefox and a bookmarklet implementation called Firebug Lite[7] which can be used with Google Chrome.[8]
+
+In addition to debugging web pages, Firebug is a useful tool for web security testing[9] and web page performance analysis.
+
+                    </div>
+
+                    <!-- Редактиране на стилове и DOM -->
+                    <h3 id="cssAndDOM">Редактиране на стилове и DOM</h3>
+                    <div>
+                        The HTML and CSS tools allow for the inspection and editing of HTML and CSS elements on a web page.[15] Later versions of Firebug allow users to see live changes to the CSS.[11] Visualization of CSS elements is shown while inspecting HTML elements. The Firebug layout tab is used to display and manipulate CSS property values. Furthermore, users can click on any visible HTML elements on a web page to access its CSS property values.[16]
+
+                        http://getfirebug.com/css
+                        http://getfirebug.com/dom
+
+                        Firebug's CSS tabs tell you everything you need to know about the styles in your web pages, and if you don't like what it's telling you, you can make changes and see them take effect instantly.
+
+<h4><strong>
+Inspect the cascade
+</strong>
+</h4>
+
+<img src="resources/img/screenCSS-cascade.png" />
+Without Firebug, you're left scratching your head when the headlines on your page come out blue, when they should have been black. With Firebug, inspect the problem element and before you can blink you'll see the CSS that is causing the problem.
+
+Firebug shows you the rules that cascade together to style each element. Rules are sorted in the order of precedence, and properties that have been overridden are stricken out. Each rule has a link back to the file where it came from which you can click to jump to the line.
+
+
+<h4><strong>
+Preview colors, images and fonts
+</strong></h4>
+
+<img src="resources/img/screenCSS-tooltip.png" />
+As you move your mouse over colors, fonts, gradients or image URLs within the CSS tab, a handy little tooltip will appear previewing the value and providing a lot more details. For instance, the image tooltip shows the dimensions of the image file, which can be a huge time saver, especially when you need to write CSS to make an element fit the size of an image precisely, the font-preview shows an example text, etc.
+
+<h4><strong>
+Tweak tweak tweak
+</strong></h4>
+
+<img src="resources/img/screenCSS-edit.png" />
+Editing CSS has never been easier. Click any CSS property and a little text editor will appear. As you type, the changes are applied immediately. You'll want to kiss Firebug when it autocompletes as you type against the list of possible values for the property you are editing. You can use the escape key to cancel changes you have made, or use the tab key to move from one property to the next.
+
+<h4><strong>
+A little higher... a little lower...
+</strong></h4>
+
+<img src="resources/img/screenCSS-updown.gif" />
+Autocomplete is a great time-saver when you're typing words, but what if you're typing numbers? If you're trying to make something line up perfectly, just use the up and down arrow keys while you're editing a number. Firebug will increment or decrement the number by one. You can also use Shift+Up/Down and Ctrl/⌘+Up/Down to increase/decrease by 10 resp. by 0.1
+
+<h4><strong>
+Learn as you go
+</strong></h4>
+
+<img src="resources/img/screenCSS-learn.gif" />
+If you're still learning CSS, Firebug is a great tool for sharpening your vocabulary. While editing a CSS property, use the up and down arrow keys to cycle between all possible properties in alphabetical order. Firebug has the complete dictionary of standard CSS keywords in its memory, along with some proprietary Mozilla additions.
+
+<h4><strong>
+Now you see it, now you don't
+</strong></h4>
+
+<img src="resources/img/screenCSS-disabling.gif" />
+Often, the solution to a problem can be found just by disabling a few CSS properties and seeing what the world looks like without them. As you mouse over each property, you'll see a little circular icon on the left. Clicking that will disable the property, and clicking it again will turn it back on.
+
+<h4><strong>
+Inspect any style sheet
+</strong></h4>
+
+<img src="resources/img/screenCSS-listing.png" />
+While the HTML tab lets you inspect the CSS of a single element, the main CSS tab lets you see entire style sheets. Click on the list of files in the toolbar and you will see a nice outline of all the style sheets imported into the page.
+
+<h4><strong>
+Copy colors and image URLs
+</strong></h4>
+
+<img src="resources/img/screenCSS-copy.png" />
+For many of us, copy-and-paste is the heart of all development. Firebug makes it easy to copy two of the most import style elements, colors and image URLs. Just right click and you'll have a context menu with clipboard possibilities.
+
+When you copy an image URL, Firebug will copy the absolute URL of the image, even if the CSS is showing it relatively.
+
+<h4><strong>
+Open in external editor
+</strong></h4>
+
+<img src="resources/img/screenScript-externalEditor.png" />
+Individual CSS files displayed by Firebug can be opened in external editors or IDEs. Firebug also allows to properly configure arguments such as line number, url, etc.
+
+<h4><strong>
+Computed Styles
+</strong></h4>
+
+<img src="resources/img/screenCSS-computedStyles.png" />
+Firebug offers a side panel that shows all CSS style values calculated by the user agent while interpreting the given CSS information for the selected node inside the HTML Panel. So, it shows the actual displayed styles.
+
+<h4><strong>
+Error indication when editing CSS properties
+</strong></h4>
+
+<img src="resources/img/screenCSS-editErrors.png" />
+The inline editor that is used to edit CSS properties and their values indicates whether an input is invalid. Watch the editor's shadow color. If it's red, the value is invalid. You want to see green.
+
+<h4><strong>
+CSS pseudo-classes
+</strong></h4>
+
+<img src="resources/img/screenCSS-pseudoStyles.png" />
+Firebug allows to inspect code that uses pseudo-classes such as :hover, :active and :focus. The user can 'lock' selected elements to such a state, so mouse movements don't change it.
+
+<h4><strong>
+Source edit or Live edit
+</strong></h4>
+
+<img src="resources/img/screenCSS-sourceLiveEdit.png" />
+For the most part Firebug shows live objects directly out of the browser. Thus the editing in Firebug is live, you are not editing source. However, the CSS panel also supports source editing. In this case the user is editing directly the source of loaded stylesheets.
+                    </div>
+
+                    <!-- Дебъгване на javaScript -->
+                    <h3 id="javaScript">Дебъгване на javaScript</h3>
+                    <div>
+                        Firebug's script tab enables users to set breakpoints and step through lines of code.[17] Additionally, Firebug can navigate directly to a line of JavaScript code, watch expressions, call stacks, and launch the debugger in the event an error occurs during execution. Firebug can also log errors. Logging uses a Firebug JavaScript API. Firebug's JavaScript panel can log errors, profile function calls, and enable the developer to run arbitrary JavaScript. Firebug allows users to run JavaScript code through the command line and allows the user to log errors that occur in the JavaScript, CSS, and XML. Firebug provides a separate text editor to modify the JavaScript and see immediate results on the user's browser.
+
+As provided in an update, the JavaScript command line features an autocomplete function. The text editor also provides the ability to write full functions. Firebug requires a user to refresh a web page in the event of a crash.
+
+                        http://getfirebug.com/javascript
+                    </div>
+
+                    <!-- Профилиране на работата с Timeline панел -->
+                    <h3 id="timelinePanel">Профилиране на работата с Timeline панел</h3>
+
+                    <!-- Използване на конзолата -->
+                    <h3 id="workingWithConsole">Използване на конзолата</h3>
+                    <div>
+                        https://getfirebug.com/wiki/index.php/Console_Panel
+                    </div>
+
+                    <!-- Управление на бисквитки -->
+                    <h3 id="cookies">Управление на бисквитки</h3>
+                    <div>
+                        http://getfirebug.com/cookies
+                    </div>
+
+                    <!-- Грешки -->
+                    <h3 id="errors">Грешки</h3>
+                    <div>
+                        http://getfirebug.com/errors
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
