@@ -1,8 +1,16 @@
-.header-row {
+.header-row, .footer-row {
     background-color: #aaaacc;
 }
 
 .page-header {
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     text-align: center;
+}
+
+body {
+    overflow-x: hidden;
+    display: block;
+    background-color: #f5f5ff;
+    vertical-align: middle;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }

@@ -21,7 +21,6 @@
                             <li class="active menu-item"><a href="#whatIsFirebug">1. Какво е Firebug?</a></li>
                             <li class="menu-item"><a href="#cssAndDOM">2. Редактиране на стилове и DOM</a></li>
                             <li class="menu-item"><a href="#javaScript">З. Дебъгване на javaScript</a></li>
-                            <li class="menu-item"><a href="#timelinePanel">4. Профилиране на работата с Timeline панел</a></li>
                             <li class="menu-item"><a href="#workingWithConsole">5. Използване на конзолата</a></li>
                             <li class="menu-item"><a href="#cookies">6. Управление на бисквитки</a></li>
                             <li class="menu-item"><a href="#errors">7. Грешки</a></li>
@@ -475,35 +474,451 @@
                     </div>
 
                     <div class="row">
-                        <!-- Профилиране на работата с Timeline панел -->
-                        <h3 id="timelinePanel">Профилиране на работата с Timeline панел</h3>
-                    </div>
-
-                    <div class="row">
-                        <!-- Използване на конзолата -->
-                        <h3 id="workingWithConsole">Използване на конзолата</h3>
-                        <div>
+                        <div class="col-sm-12">
+                            <!-- Използване на конзолата -->
+                            <h3 id="workingWithConsole">Използване на конзолата</h3>
+                        </div>
+                        <div class="col-sm-12">
                             https://getfirebug.com/wiki/index.php/Console_Panel
+
+                            Конзолата предлага три различни функционалности. Тя показва всички съобщения, които конзолата с грешките показва. Но повече от това - тя показва резултати от команди, които потребителя въвежда в конзолата. Също така тя има интегриран профайлър за JavaScript дейности. 
+
+                            <br><br>
+                            <h4><strong>
+                                Javascript и DOM елементи
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Тип</th>
+                                            <th>Показвана стойност</th>
+                                            <th>Обяснение</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>undefined</td>
+                                            <td><i>undefined</i></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>null</td>
+                                            <td><i>null</i></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>boolean</td>
+                                            <td>true</td>
+                                            <td>true или false</td>
+                                        </tr>
+                                        <tr>
+                                            <td>integer, float</td>
+                                            <td>123, 123.4</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>infinity</td>
+                                            <td>Infinity</td>
+                                            <td>Позитивни стойности се изписват като Infinity, негативни - като -Infinity</td>
+                                        </tr>
+                                        <tr>
+                                            <td>NaN</td>
+                                            <td>NaN</td>
+                                            <td>Nan(not a number) се получава, когато се раздели 1/0.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>string</td>
+                                            <td>"String"</td>
+                                            <td>Стринговете се изписват с двойни кавички. Ако са твърде дълги, се отрязват и се замества с ... Дължината може да се сетне от extensions.firebug.stringCropLength</td>
+                                        </tr>
+                                        <tr>
+                                            <td>array</td>
+                                            <td>["item1", "item2", <strong>4 more...</strong>]</td>
+                                            <td>Размера може да се сетне от extensions.firebug.ObjectShortIteratorMax</td>
+                                        </tr>
+                                        <tr>
+                                            <td>object</td>
+                                            <td><img src="resources/img/ObjectType.png" /></td>
+                                            <td>Типа на обекта се показва в случай, че може да бъде определен, в противен случай - Обект, последван от айтъмс. Размера на показваните айтъмс може да сетне от exensions.firebug.ObjectShortIteratorMax</td>
+                                        </tr>
+                                        <tr>
+                                            <td>function</td>
+                                            <td>compare(str1, str2, options)</td>
+                                            <td>функциите се показват, като се показва техния хедър, тоест параметрите, и името на функцията, ако може да бъде определено, иначе - функция</td>
+                                        </tr>
+                                        <tr>
+                                            <td>array-like object</td>
+                                            <td><img src="resources/img/NodeListObject.png" />
+                                            <br>
+                                            <img src="resources/img/ArrayLikeObject.png"/>
+                                            </td>
+                                            <td>Масиво-подобни обекти са такива, които могат да бъдат обходени, тоект имат индекси. Типа на обекта се показва в случай, че може да бъде определен, иначе - Обект.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DOM node</td>
+                                            <td>div.cursor_off.vt.issuecomment, div#footer</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>window</td>
+                                            <td><img src="resources/img/DOMWindow.png"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>document</td>
+                                            <td><img src="resources/img/DOMDocument.png"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>regular expression</td>
+                                            <td><img src="resources/img/RegExpType.png"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>application cache</td>
+                                            <td>0 items in offline cache</td>
+                                            <td>показва колко елемента се държат в кеша</td>
+                                        </tr>
+                                        <tr>
+                                            <td>storage</td>
+                                            <td><img src="resources/img/StorageObject.png"></td>
+                                            <td>показва колко елемента се държат в сториджа</td>
+                                        </tr>
+                                        <tr>
+                                            <td>browser history</td>
+                                            <td>3 history entries</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>CSS rules</td>
+                                            <td><img src="resources/img/CSSSupportsRuleObject.png"></td>
+                                            <td>CSS правила се показва като типа се показва първо с допълнителна информация, свързана с правилото.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+
+
+                            <br><br>
+                            <h4><strong>
+                                Клик функционалност
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                Конзол съобщенията предлагат на потребителя различни типове опции, които могат да бъдат достъпени с мишката. Например - клик върху линк на съобщение за грешка или warning праща директно към подходящия панел; десен клик върху тях дава възможност за копиране на съобщението или сетване на брейкпойнт за конкретната грешка. XML HTTP заявки съответно дават възможност да се копира локацията или респонса чрез контекстното меню. 
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Профилиране
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    Конзолата предлага възможност за профилиране на JavaScript дейност и информация за използване на памет чрез два бутона в туулбара на Panel. Профайлъра позволява на потребителите да наблюдават JavaScript дейности и да получат статистики за това. CPU профилиране позволява да се получи информация за извикване на JavaScript функции.
+
+                                    <br><br>
+                                    <a href="https://getfirebug.com/wiki/index.php/Memorybug">Memorybug</a> е екстеншън на Furebug за получаване на повече информация за работата с паметта.
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="row">
-                        <!-- Управление на бисквитки -->
-                        <h3 id="cookies">Управление на бисквитки</h3>
-                        <div>
-                            http://getfirebug.com/cookies
+                        <div class="col-sm-12">
+                            <!-- Управление на бисквитки -->
+                            <h3 id="cookies">Управление на бисквитки</h3>
+                        </div>
+                        <div class="col-sm-12">
+                            Firebug позволява на потребителя да види и менажира бисквитки в своя браузър. Може да откаже бисквитки за определени сайтове, да филтрита бисквитки, да създава нови и да трие съществуващи. Потребителя може също така да спре дебъгера, когато определена бисквитка промени стойността си и да види реда в скрипта, който е причинил промяната.
+
+                            <br><br>
+                            <h4><strong>
+                                Инспектиране на бисквитки
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Всяка бисквитка в списъка може да бъде "разширена". Това е полезно особено, когато стойността на бисквитката е много дълга и не може да бъде визуализирана цялата. Ако потребителя търси бисквитка с конкретно име, може да използва сърчбокса на браузъра и да напише името й. Листа се филтрира динамично, докато се въвежда инпут в сърчбокса.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/inspect-cookies.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Права на бисквитки
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Потребителя може и да менажира правата на бисквитките за текущия сайт директно през туулбара на Firebug. Бутона за права визуализира текущия статус като лейбъл и се ъпдайтва авоматично, ако правото се промени(например през диалога с опции на браузъра).
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/cookie-permissions.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Събития
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Ако потребителят иска да види кога нещо се случва с ббисквитка, може да използва Console таба на Firebug. Cookies панела логва информация всеки път, когато бисквитка е създадена, променена, изтрита или отхввърлена. Това може да бъде изключено от Cookie -> Options менюто.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/cookie-events.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                "Срок на годност" на бисквитки
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    "Срок на годност" на бисквитки се показва, конвертирано към локалната таймзона и текущата Firefox локална таймзона. Лесно е да се пресметке реалната стойност. Възможно е и да се промени текущата стойност, използвайки попъп календар и таймпикър.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/cookie-expire-time.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Експортиране на бисквитки
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Потребителят може да използва менюто Cookies, за да създаде нови или да премахне съществуващи бисквитки. Същото това меню може да се използва, за да експортира всички бисквитки в браузъра или само тези, които са асоциирани с текющата страница в cookie.txt файл в стандартен текст формат(всяка бисквитка заедно с информация за неща се помества на един ред).
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/export-cookies.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Клипборд за бисквитки
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Стандартни клипборд функционалности като Изрежи/Копирай/Постави са също поддържани. Ако потребителят се нуждае от тях, той трябва само да кликне върху бисквитката и да използва контекстното меню. Трябва само да избере редактиай и да използва диалога, който се показва.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/cookie-clipboard.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Изпратени и получени бисквитки
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Панела Cookies е също интегриран със съществуващия Net панел. Ако потребителя разтвори съществуващ рикуест в панела, той ще види допълнителен таб Cookies, който показва изпратени и получени бисквитки с всичката информация за тях на място.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/sent-received-cookies.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                JSON инспектор
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Ако стойността на бисквитката е форматирана като JSON, има JSON таб, показващ стойността, използвайки разтварящо се дърво. Подобно на мрежови отговори в Net панела на Firebug.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/json-inspector.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                XML инспектор
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Ако стойността на бисквитката е валиден XML документ, има умного удобен XML таб, показващ добре форматирано и оцветено XML-a.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/xml-inspector.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                document.cookie
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    По-добро форматиране е имплементирано сега за document.cookie пропъртито, когато бисквитката е логната в Console панела.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/document-cookie.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Брейкпойнт на бисквитка
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Потребителя може да създаде брейкпойнт на бисквитка, за да види кога конкретна бисквитка бъде модифицирана. Firebug дебъгера е интегриран по такъв начин, че потребителя може да види кой ред в сорс кода причинява модификацията.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/cookie-breakpoint.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Условие за брейкпойнт
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Потребителя може да създава условия за брейкпойнт и брейкпойнта ще спре само ако условието се изпълни. Потребителя може да използва пропъртита на бисквитки - стойност, път, хост, дата на изтичане в милисекунди и тн.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/breakpoint-condition.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Спиране при следваща промяна на бисквитката
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Панела Бисквитки се интегрира с функционалността на Firebug - Break on Feature. Потребителя просто трябва да използва бутона "продължи", за да спре при следваща промяна на бисквитката.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/break-on-next.png" />
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
                     <div class="row">
-                        <!-- Грешки -->
-                        <h3 id="errors">Грешки</h3>
-                        <div>
-                            http://getfirebug.com/errors
+                        <div class="col-sm-12">
+                            <!-- Грешки -->
+                            <h3 id="errors">Грешки</h3>
+                        </div>
+                        <div class="col-sm-12">
+                            Когато нещата се влошат, Firebug дава на потребителя незабавно информация за това, която е детайлна и полезна. Репортва грешки възникнали в JavaScript, CSS и XML код.
+
+                            <br><br>
+                            <h4><strong>
+                                Без излишества
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Повечето браузъри репортват грешките чрез дъмпване на всички тях в един голям прозорец, който включва проблемите с всяка уеб страница, която потребителя е посетил. Firebug е малко по-мил от отва - той показва само грешките за страницата, която е текуща в момента. 
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenErrors-soup.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Информативни JavaScript грешки
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    JavaScript грешките включват богатство от информация за това кое кога се е случило, включващи описание, файл и номер на ред и ред от сорс кода, където грешката е възникнала. Дори повече - ако потребителя кликне плюсчето за разгръщане на грешката, ще види целия стек трейс, включващ стойностите на всички аргументи на функцията.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenErrors-js.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Отиване до дебъгера
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Всеки репорт за грешки има линк в дясната си страна, който сочи към файла и номера на реда, където грешката е възникнала. С клик въхру този линк, потребителя бива отведен до JavaScript дебъгера на Firebug или CSS инспектора, така че той може да започне да решава проблема веднага.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenErrors-jump.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Търсене
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Използвайки сърч бокса, потребителя може да филтрира Firebug конзолата да показва само грешки и съобщения, които съвпадат с текста, който той търси. Ако нови редове се добавят към конзолата, те ще се появят само, ако съвпаднат с текста от сърч бокса.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenErrors-search.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Филтриране на грешките
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Firebug е способен да репортва грешки, възникнали в JavaScript, CSS, XML файлове. Ако потребителя има нужда от репорт за грешки само в някои от тези езици, той може да ънчекне тези, които не иска да вижда. И може да го направи от менюто в Console.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenErrors-filter.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Позиция на грешката
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    В случай на JavaScript грешки, Console панела показва стрелка, сочеща към точната позиция вътре в реда, където грешката е възникнала.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenErrors-errorPos.png" />
+                                </div>
+                            </div>
+<!-- 
+                            <br><br>
+                            <h4><strong>
+
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/" />
+                                </div>
+                            </div> -->
+
                         </div>
                     </div>
+
                 </div>
             </div>
+            <!-- end of content -->
+
+            <div class="row footer-row">
+                <div class="col-md-12">
+                    <h4>Изготвил: Йоана Божидарова Тодорова, номер: 80755, специалност: Компютърни науки, преподавател: доц. Милен Петров</h4>
+                </div>
+            </div>
+            <!-- end of footer -->
         </div>
     </body>
 </html>
