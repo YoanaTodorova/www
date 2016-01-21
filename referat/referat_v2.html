@@ -30,9 +30,9 @@
                 </div>
 
                 <div class="col-sm-9">
+                            <!-- Какво е Firebug -->
                     <div class="row">
                         <div class="col-sm-12">
-                            <!-- Какво е Firebug -->
                             <h3 id="whatIsFirebug">Какво е Firebug?</h3>
                         </div>
                         <div class="col-sm-12">
@@ -46,9 +46,10 @@
                             В допълнение към дебъгването на уеб страници, Firebug е полезен инструмент за тестване на уеб секюрити и анализиране на перформънс на страници.
                         </div>
                     </div>
+                    
+                            <!-- Редактиране на стилове и DOM -->
                     <div class="row">
                         <div class="col-sm-12">
-                            <!-- Редактиране на стилове и DOM -->
                             <h3 id="cssAndDOM">Редактиране на стилове и DOM</h3>
                         </div>
                         <div class="col-sm-12">
@@ -248,15 +249,228 @@
 
                     </div>
 
-                    <div class="row">
                         <!-- Дебъгване на javaScript -->
-                        <h3 id="javaScript">Дебъгване на javaScript</h3>
-                        <div>
-                            Firebug's script tab enables users to set breakpoints and step through lines of code.[17] Additionally, Firebug can navigate directly to a line of JavaScript code, watch expressions, call stacks, and launch the debugger in the event an error occurs during execution. Firebug can also log errors. Logging uses a Firebug JavaScript API. Firebug's JavaScript panel can log errors, profile function calls, and enable the developer to run arbitrary JavaScript. Firebug allows users to run JavaScript code through the command line and allows the user to log errors that occur in the JavaScript, CSS, and XML. Firebug provides a separate text editor to modify the JavaScript and see immediate results on the user's browser.
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 id="javaScript">Дебъгване на javaScript</h3>
+                        </div>
+                        <div class="col-sm-12">
+                            Script таба на Firebug позволява на потребителите да задават брейкпойнти и да инспектират посредством стъпки редове от код. В допълнение Firebug може да навигира директно до ред от JavaScript код, експрешъни, които "наблюдаваме", кол стекове, и също така да зареди дебъгера, ако възникне грешка по време на изпълнение. Firebug може също да логва грешки. Логването използва Firebug JavaScript API. JavaScript панела на Firebug може да полгва грешки, извиквания на функции, и позволява на потребителя да изпълнява произволен JavaScript код от конзолата и също така позволява на потребителя да логва грешки, възникнали в JavaScript, CSS и XML. Firebug предоставя отделен текст едитор да модифицира JavaScript-а и да вижда незабавни резултати в браузъра на юзъра.
 
-    As provided in an update, the JavaScript command line features an autocomplete function. The text editor also provides the ability to write full functions. Firebug requires a user to refresh a web page in the event of a crash.
+                            <br><br>
+                            В скорошен ъпдейт се предоставя JavaScript command line аутокъплийтване на функции. Текстовия редактор също предостая възможността за писане на цели функции. Firebug изисква от потребителя да рефрешке уеб страницата, ако се получи така, че тя крашне.
 
-                            http://getfirebug.com/javascript
+                            <br><br>
+                             <h4><strong>
+                                Лесно намиране на скриптове
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Много уеб приложения се състоят от голям брой редове и намирането на това, което потребителя иска да дебъгне, може да бъде тежко. Бутона със скриптови файлове на Firebug сортира и организира файловете в много чист лист, който помага за намирането на всеки файл много бързо. При писане на име, листа се филтрира.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-listing.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Спиране на изпълнението по всяко време
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Firebug позволява на потребителите да слагат брейкпойнти, които казват на дебъгера да спре изпълнението, когато той достигне конкретен ред. Докато изпълнението е паузирано, потребителя може да види стойността на която и да е променлива и да инспектира обектите, докато времето е спряло.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-breakpoint.gif" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Спиране на изпълнението, но само ако...
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Брейкпойнтите могат да създават проблеми, ако спират изпълението твърде често. Понякога потребителя просто иска да спре изпълнението при много специфични обстоятелства. Firebug  позволява на потребителя да създаде условни брейкпойнти, които проверяват даден израз, който трябва да бъде истина, за да накара брейкпойнта да сппре.
+                                    <br><br>
+                                    За да създаде условен брейкпойнт, потребителя просто трябва да кликне с дясното копче на който и да е ред. Облаче се появява, което подканва поребителя да въведе JavaScript израз. Той може да кликне с дясното копче отново по всяко време, за да промени израза, или с лявото копче, за да премахне изцяло брейкпойнта.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-cond.png" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                С малки стъпки
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    След като дебъгера е спрял, постребителя може да продължи изпънението по всяко време. Това му позволява да види точно как променливите и обектите са афектирани, когато точно определн ред от кода се изпълни.
+                                    <br><br>
+                                    Потребителя също така може да избере да "навлезе" в изпълнението повече от един ред. От контекстното меню той трябва да избере "Run to this line", за да продължи изпълнението, докато то премине през реда, който той е кликнал.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-step.gif" />
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Спиране при грешка
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Не винаги потребителя избира да използва дебъгера, понякога дебъгера ги избира. Firebug  дава на потребителя опция да спре в дебъгера автоматично, когато се появи грешка, като по този начин той може да разнищи какъв е проблема.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-breakerror.png"/>
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Stack trace
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Когато дебъгера е спрял, Firebug показва на потребителя стек трейса, който представлява множество от вложени извиквания на функции, които в този момент се изпълняват и искат да приключат.
+                                    <br><br>
+                                    Стека с извиквания на функции се представлява от компакни бутони в туулбара, като всеки един от тях е име на функция от стека. Потребителя може да кликне който и да е бутон, за да прескочи до реда, където тази функция е спряла, и да погледне локалните променливи във функцията.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-stack.png"/>
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Наблюдаване на изрази
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Докато дебъгва, потребителя често иска да види стойността на сложен израз или обект, които са скрити в DOM-a. Firebug позволява на потребителя да напише произволен JavaScript израз, чиято стойност ще се ъпдейтне всеки път, когато се инспектира нещо с дебъгера.
+                                    <br><br>
+                                    За по бързо писане на израз, потребителя може да използва таб бутона, за да аутокъмплийтне пропъртита на обекти.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-watch.png"/>
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Множество туултипи
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Докато дебъгера е паузиран, потребителя може да мърда мишката над която и да е променлива в текущата функция, за да види туултип, който показва стойността на променливата. Това е много удобен начин потребителя да остане фокусиран върху кода и в същото време да намери въпросите, които търси.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-tooltip.gif"/>
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                JavaScript перформънс
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Следната ситуация: уеб приложението на потребителя е почти перфектно. Оправил е всички бъгове, приложението изглежда много арт, потребителите просто го обожават. Но има един проблем - някои от фийчърите на сайта са леко бавни и потребителя не е сигурен каква е причината за това.
+                                    <br><br>
+                                    С Firebug потребителя няма повече да се чуди защо кода е бавен. С Firebug профайлъра потребителя може да разграничи бързи от бавните части на уеб приложението му за секунди.
+                                    <br><br>
+                                    За да използва профайлъра, потребителя трябва да отиде на таба конзола и да кликне Profile бутона.След това трябва да изпълни приложението за известно време или да релоудне страницата и след това да кликне Profile бутона отново. След това той ще види детайлен репорт, който показва какви функции са били извикани и колко време е отнело на всяка.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenLogging-profile.gif"/>
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Логване на извиквания на функции
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Понякога проблемна функция се вика толкова много пъти, че потребителя не може да спре в дебъгера всеки път. Потребителя просто иска да знае кога тя е извикана и какви параметри са били подадени.
+                                    <br><br>
+                                    За да тракне всички извиквания на функция, потребителя просто трябва да кликне на скрипт таба и да избере "Log calls to function_name". След това трябва да отиде на таба конзола и там може да види всички извиквания.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-logcalls.gif"/>
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Отиди деректно на ред 108
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Често потребителя иска да прескочи деиректно до конкретен ред от скрипта. И това е много лесно - потребителя трябва да напише номера на реда в сърч бокса, предшестван от диез.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-linejump.png"/>
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Код, генериран от браузъра или от eval()
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Поради многжество причини, Firefox генерира малки JavaSccript функции. Те се появяват във Firebug под адреса на страницата, от която са били генерирани, следвани от event и с име, наследено от техния сорс код. Потребителя може да сложи брейкпойнт на тези функции както на всяка друга.
+                                    <br><br>
+                                    По подобен начин JavaScript, генериран от eval() се появява в списъка с файлове под адреса на страницата, която е извикала eval(), със сорс код резюме за име.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/BrowserGenereratedFunctions.png"/>
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Изпълнимите редове са маркирани
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Скрипт панела на Firebug използва зелен цвят за номен на ред, ако съответния ред се изпълнява. По този начин потребителя може по всяко време да знае къде да сложи брейкпойнт.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-exeLines.png"/>
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Нотификации
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Дебъгерът може да задържи изпълнение на JavaScript поради много причини. Например дебъгера моде да достигне стандартен скриптов брейкпойнт, HTML брейкпойнт, XHR или брейкпойнт за грешка и т.н. За да е сигурен, че потребителя разбира правилната причина, Firebug показва нотификация с детайли.
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-breakNotification.png"/>
+                                </div>
+                            </div>
+
+                            <br><br>
+                            <h4><strong>
+                                Отваряне във външен редактор
+                            </strong></h4>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    Отделни скриптови файлове, показани от Firebug, могат да бъдат отворени с външни редактори или IDE-та. Firebug също така позволява правилно да се конфигурират аргументи като номер на ред, адрес и т.н,
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="resources/img/screenScript-externalEditor.png" />
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
