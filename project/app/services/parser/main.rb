@@ -17,7 +17,10 @@ module Parser
     private
 
     def process_word(word, next_word)
-      Parser::CardinalNumber.new(word).parsed
+      Parser::Date.new(word).parsed
+      # constant = Parser::Rules.check_word(word, next_word)
+
+      # constant.public_send(:new, word).parsed
     end
   end
 end

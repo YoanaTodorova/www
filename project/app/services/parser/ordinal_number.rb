@@ -1,6 +1,8 @@
 # редно
 module Parser
   class OrdinalNumber
+    attr_accessor :parsed
+
     NUMBERS = {
       1 => 'първ',
       2 => 'втор',
@@ -22,8 +24,6 @@ module Parser
     end
 
     def parse
-      return NUMBERS[@number] if @number <= 10
-      
       @parsed += parse_4(@number / 1000)
       @number = @number % 1000
       @parsed += parse_3(@number / 100)
@@ -34,7 +34,7 @@ module Parser
     def take(gender)
       case gender
       when :feminine then @parsed + 'а'
-      when :masculine then @parsed + 'о'
+      when :masculine then @parsed + 'и'
       else @parsed
       end
     end

@@ -1,10 +1,10 @@
 require 'sinatra/base'
 require 'data_mapper'
 
-require './services/parser/number.rb'
 require './services/parser/cardinal_number.rb'
 require './services/parser/ordinal_number.rb'
 require './services/parser/year.rb'
+require './services/parser/date.rb'
 require './services/parser/rules.rb'
 require './services/parser/main.rb'
 
