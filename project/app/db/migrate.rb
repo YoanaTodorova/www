@@ -1,0 +1,1 @@
+Mapping.auto_migrate!

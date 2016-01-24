@@ -23,6 +23,7 @@ class HomeController < ApplicationController
   helpers HomeHelper
 
   get '/' do
+    @active_menu = 'home'
     haml :'home/index'
   end
 end
@@ -32,6 +33,7 @@ class MappingController < ApplicationController
   helpers MappingHelper
 
   get '' do
+    @active_menu = 'mapping'
     load_collection
     haml :'mapping/index'
   end

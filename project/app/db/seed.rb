@@ -1,0 +1,1 @@
+Mapping.create(name: 'test', map_to: 'mapping')

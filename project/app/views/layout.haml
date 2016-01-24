@@ -9,14 +9,13 @@
       %div.row
         %h1 Система за превод от текст - към чист текст
 
-
-      %div.row
+      %div.row.vert-offset-bottom-4
         %ul.nav.nav-tabs
-          %li{ role: 'presentation' }
-            %a{ href: '/' } Home
-          %li{ role: 'presentation' }
-            %a{ href: '/mappings' } Mappings
+          %li{ role: 'presentation', class: @active_menu == 'home' ? 'active' : '' }
+            %a{ href: '/' }
+              %h3 Home
+          %li{ role: 'presentation', class: @active_menu == 'mapping' ? 'active' : '' }
+            %a{ href: '/mappings' }
+              %h3 Mappings
 
-      %div.row
-        %div.col-sm-12
-          =yield
+      =yield

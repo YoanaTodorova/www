@@ -1,7 +1,7 @@
-Count of mappings
-= @mappings.count
-
 %div.row
+  %h3= "Брой създадени мапинги: #{ @mappings.count }"
+
+%div.row.vert-offset-top-4
   %form.form-inline{ action: '/mappings', method: :post }
     %div.form-group
       %label{ for: 'mapping[name]' } Дума в текст:
