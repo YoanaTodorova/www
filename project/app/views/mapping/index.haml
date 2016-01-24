@@ -1,6 +1,26 @@
-!!!
-%html
-  %head
+Count of mappings
+= @mappings.count
 
-  %body
-    %h1 text
+%div.row
+  %form.form-inline{ action: '/mappings', method: :post }
+    %div.form-group
+      %label{ for: 'mapping[name]' } Дума в текст:
+      %input.form-control{ type: 'text', name: 'mapping[name]' }
+    %div.form-group
+      %label{ for: 'mapping[map_to]' } Замести с:
+      %input.form-control{ type: 'text', name: 'mapping[map_to]' }
+    %button.btn.btn-primary{ type: 'submit' } Добави
+
+%div.row.vert-offset-top-4
+  %table.table.table-borderded
+    %thead
+      %tr
+        %th #
+        %th Срещнато в текст
+        %th Замества се с
+    %tbody
+    - @mappings.to_enum.with_index(1).each do |mapping, index|
+      %tr
+        %th= index
+        %th= mapping.name
+        %th= mapping.map_to

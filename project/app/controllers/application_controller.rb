@@ -4,7 +4,7 @@ require 'haml'
 class ApplicationController < Sinatra::Base
   helpers ApplicationHelper
 
-  # set folder for templates to ../views, but make the path absolute
+  set :public_folder, File.expand_path('../../public', __FILE__)
   set :views, File.expand_path('../../views', __FILE__)
 
   # don't enable logging when running tests
@@ -29,8 +29,18 @@ end
 
 
 class MappingController < ApplicationController
-  get '/' do
-    title "Example Page"
-    erb :example
+  helpers MappingHelper
+
+  get '' do
+    load_collection
+    haml :'mapping/index'
+  end
+
+  post '' do
+    create_mapping
+  end
+
+  delete '' do
+    delete_mapping
   end
 end

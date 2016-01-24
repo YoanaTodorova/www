@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title Система за превод от текст - към чист текст 
+    %link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+    %link{ rel: 'stylesheet', href: 'stylesheets/bootstrap_enhancements.css', type: 'text/css' }
+  %body
+    %div.container
+      %div.row
+        %h1 Система за превод от текст - към чист текст
+
+
+      %div.row
+        %ul.nav.nav-tabs
+          %li{ role: 'presentation' }
+            %a{ href: '/' } Home
+          %li{ role: 'presentation' }
+            %a{ href: '/mappings' } Mappings
+
+      %div.row
+        %div.col-sm-12
+          =yield
