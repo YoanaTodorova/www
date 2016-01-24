@@ -17,7 +17,7 @@ module Parser
     private
 
     def process_word(word, next_word)
-      Parser::OrdinalNumber.parse(word)
+      Parser::CardinalNumber.new(word).parsed
     end
   end
 end
