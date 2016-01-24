@@ -26,6 +26,18 @@ class HomeController < ApplicationController
     @active_menu = 'home'
     haml :'home/index'
   end
+  
+  get '/translate' do
+    @active_menu = 'home'
+    haml :'home/index'
+  end
+
+  post '/translate' do
+    @original_text = params[:text][:original]
+    translate
+
+    haml :'home/index'
+  end
 end
 
 
