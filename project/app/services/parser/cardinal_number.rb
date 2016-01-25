@@ -34,18 +34,18 @@ module Parser
 
     def parse_4(number)
       case number
-      when 1 then 'хиляда'
-      when 2..9 then NUMBERS[number] + 'хиляди'
+      when 1 then 'хиляда '
+      when 2..9 then NUMBERS[number] + 'хиляди '
       else ''
       end
     end
 
     def parse_3(number)
       case number
-      when 1 then 'сто'
-      when 2 then 'двеста'
-      when 3 then 'триста'
-      when 4..9 then NUMBERS[number] + 'стотин'
+      when 1 then 'сто '
+      when 2 then 'двеста '
+      when 3 then 'триста '
+      when 4..9 then NUMBERS[number] + 'стотин '
       else ''
       end
     end

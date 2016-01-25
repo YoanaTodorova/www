@@ -41,18 +41,18 @@ module Parser
 
     def parse_4(number)
       case number
-      when 1 then 'хиляда'
-      when 2..9 then Parser::CardinalNumber.new(number).parsed + 'хиляди'
+      when 1 then 'хиляда '
+      when 2..9 then Parser::CardinalNumber.new(number).parsed + ' хиляди '
       else ''
       end
     end
 
     def parse_3(number)
       case number
-      when 1 then 'сто'
-      when 2 then 'двеста'
-      when 3 then 'триста'
-      when 4..9 then Parser::CardinalNumber.new(number).parsed + 'стотин'
+      when 1 then 'сто '
+      when 2 then 'двеста '
+      when 3 then 'триста '
+      when 4..9 then Parser::CardinalNumber.new(number).parsed + 'стотин '
       else ''
       end
     end
