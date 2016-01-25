@@ -24,17 +24,21 @@ class HomeController < ApplicationController
 
   get '/' do
     @active_menu = 'home'
+    
     haml :'home/index'
   end
 
   get '/translate' do
     @active_menu = 'home'
+    
     haml :'home/index'
   end
 
   post '/translate' do
     @original_text = params[:text][:original]
     translate
+    @active_menu = 'home'
+
 
     haml :'home/index'
   end
@@ -47,14 +51,23 @@ class MappingController < ApplicationController
   get '' do
     @active_menu = 'mapping'
     load_collection
+    
     haml :'mapping/index'
   end
 
   post '' do
     create_mapping
+    @active_menu = 'mapping'
+    load_collection
+
+    haml :'mapping/index'
   end
 
   delete '' do
     delete_mapping
+    @active_menu = 'mapping'
+    load_collection
+
+    haml :'mapping/index'
   end
 end
