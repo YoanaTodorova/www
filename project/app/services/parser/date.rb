@@ -38,8 +38,12 @@ module Parser
     end
 
     def parse_day(day)
-      parsed = Parser::OrdinalNumber.new(day)
-      parsed.take(:masculine)
+      if day.to_i.to_s == day
+        parsed = Parser::OrdinalNumber.new(day)
+        parsed.take(:masculine)
+      else
+        day.downcase
+      end
     end
 
     def parse_month(month)

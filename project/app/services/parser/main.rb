@@ -2,25 +2,44 @@ module Parser
   class Main
     def initialize(original_text)
       @original_text = original_text
+      @splitted = @original_text.split(/\s+/)
+      @translated = []
     end
 
     def perform
-      splitted = @original_text.split(' ')
-      
-      processed = splitted.map.with_index do |word, index|
-        process_word(word, splitted[index + 1])
-      end
-
-      processed.join(' ')
+      build_final
+      @translated.join(' ')
     end
 
     private
 
-    def process_word(word, next_word)
-      Parser::Date.new(word).parsed
-      # constant = Parser::Rules.check_word(word, next_word)
+    def build_final
+      index = 0
+      
+      while @splitted[index]
+        word = @splitted[index]
+        
+        constant, arguments, offset = process_word(
+          word,
+          @splitted[index + 1],
+          @splitted[index + 2]
+        )
 
-      # constant.public_send(:new, word).parsed
+        @translated << constant.public_send(:new, *arguments).parsed
+
+        index += offset
+      end
+    end
+
+    def process_word(word, next_word, next_next_word)
+      constant, arguments = Parser::Rules.check_word(word, next_word, next_next_word)
+    end
+  end
+
+  class Identity
+    attr_accessor :parsed
+    def initialize(word)
+      @parsed = word
     end
   end
 end

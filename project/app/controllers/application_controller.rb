@@ -26,7 +26,7 @@ class HomeController < ApplicationController
     @active_menu = 'home'
     haml :'home/index'
   end
-  
+
   get '/translate' do
     @active_menu = 'home'
     haml :'home/index'

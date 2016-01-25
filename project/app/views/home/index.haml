@@ -1,10 +1,12 @@
 %div.row
   %form{ action: '/translate', method: :post }
     %div.form-group
-      %input.form-control{ type: 'text', name: 'text[original]', value: @original_text }
+      %label Оригинален текст
+      %textarea.form-control{ rows: 5, name: 'text[original]'}= @original_text
 
     %div.form-group
-      %input.form-control{ type: 'text', name: 'text[translated]', value: @translated_text }
+      %label Изчистен текст
+      %textarea.form-control{ rows: 5, name: 'text[translated]' }= @translated_text
 
     %button.btn.btn-primary{ type: 'submit' } Преведи
 
